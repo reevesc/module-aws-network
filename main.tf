@@ -118,14 +118,14 @@ resource "aws_route_table_association" "public-b-association" {
 
 # Implement NAT gateway
 resource "aws_eip" "nat-a" {
-  vpc = true
+  domain = "vpc"
   tags = {
     "Name" = "${local.vpc_name}-NAT-a"
   }
 }
 
 resource "aws_eip" "nat-b" {
-  vpc = true
+  domain = "vpc"
   tags = {
     "Name" = "${local.vpc_name}-NAT-b"
   }
